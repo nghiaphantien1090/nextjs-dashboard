@@ -9,14 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.7",
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.1.0",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
+    "bootstrap": "^5.2.3",
+    "clsx": "^1.2.1",
+    "echarts": "^5.4.2",
+    "echarts-for-react": "^3.0.2",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
+    "loader-utils": "^3.2.1",
     "next": "13.4.1",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.4"
+    "react-redux": "^8.0.5",
+    "sass": "^1.62.1",
+    "sharp": "^0.32.1",
+    "typescript": "5.0.4",
+    "uniqid": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/uniqid": "^5.3.2",
+    "babel-plugin-inline-react-svg": "^2.0.2"
   }
 }

@@ -1,0 +1,223 @@
+@import '../styles/variables';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html,body {
+  position: relative;
+  line-height: 1.5;
+  outline-style: none;
+  & :focus{
+    outline: none;
+  }
+}
+.font-34{
+  font-size: 34px;
+}
+.dot {
+  width: .625rem;
+  height: .625rem;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .5rem;
+}
+.rounded-circle{
+  border-radius: 999px;
+}
+
+@for $i from 1 through 100 {
+    .fs-#{$i}{
+    font-size: $i * 1px;
+    }
+}
+$font-weight:100,200,300,400,500,600,700,800,900;
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+@each $weight in $font-weight{
+  .fw-#{$weight} {
+    @include font-weight($weight);
+  }
+};
+.relative{
+  position: relative;
+}
+.absolute{
+  position:absolute
+}
+.top-product-chart{
+  @media (min-width: map-get($grid-breakpoints,sm)) {
+    height: 370px;
+  }
+};
+h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    margin-top: 0;
+    font-family: $font-family-sans-serif;
+}
+.h-1{
+  height: 30px;
+  
+};
+
+$all-colors: map-merge-multiple($blues,$grays,$greens, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+$all-colors:map-merge($map1: $all-colors,$map2: ("body-color":$body-bg) );
+ $theme-colors:map-merge($map1: $theme-colors, $map2: $all-colors);
+ $utilities: map-merge(
+  $utilities,
+
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $theme-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+//Customize for background-color
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color": map-merge(
+      map-get($utilities, "background-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "background-color"), "values"),
+          (
+            $theme-colors
+          )
+        ),
+      ),
+    ),
+  )
+);
+  //for example bg-xl-red-300-hover
+$utilities: map-merge(
+  $utilities, (
+    "backgound-color": map-merge(
+      map-get($utilities, "background-color"),
+      ( state: hover,responsive:true ),
+    ),
+  )
+);
+
+//Customize for border-color
+$utilities: map-merge(
+  $utilities,
+  (
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "border-color"), "values"),
+          (
+            $theme-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities, (
+    "border-color": map-merge(
+      map-get($utilities, "border-color"),
+      ( responsive: true,state:hover ),
+    ),
+  )
+);
+$utilities: map-merge(
+  $utilities, (
+    "border": map-merge(
+      map-get($utilities, "border"),
+      ( responsive: true,state:hover ),
+    ),
+  )
+);
+//Customize for width
+$utilities: map-merge(
+  $utilities, (
+    "width": map-merge(
+      map-get($utilities, "width"),
+      ( responsive: true,state:hover ),
+    ),
+  )
+);
+//Customize for justify-content 
+$utilities: map-merge(
+  $utilities, (
+    "justify-content": map-merge(
+      map-get($utilities, "justify-content"),
+      ( responsive: true,state:hover ),
+    ),
+  )
+);
+
+//Customize for opacity 
+$valuesOpa: (
+      0: 0,     
+    );
+
+@for $i from 1 through 100 {
+  $valuesOpa:map-merge($map1: $valuesOpa, $map2:($i:$i/100) )
+}
+$utilities: map-merge(
+  $utilities,
+  (
+    "opacity": map-merge(
+      map-get($utilities, "opacity"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "opacity"), "values"),
+          (
+            $valuesOpa
+          ),
+        ),
+      ),
+    ),
+  )
+);
+//Customize for visibility
+  //for example xl-visible
+$utilities: map-merge($utilities, ("visibility": map-merge(map-get($utilities, "visibility"),
+        (responsive: true, state:hover),
+      ),
+    ));
+
+      @import "../node_modules/bootstrap/scss/utilities/api";
+
+/* Handle on hover */
+
+::-webkit-scrollbar-corner{
+  background-color: $body-bg
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+.scroll:active::-webkit-scrollbar-thumb,
+.scroll:focus::-webkit-scrollbar-thumb,
+.scroll:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    visibility: hidden;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+.overflow-x-hidden{
+  overflow-x: hidden;
+};
+.overflow-y-scroll{
+  overflow-y: scroll;
+}
