@@ -2,7 +2,7 @@ import Badge from "../Badge";
 import ReactECharts from 'echarts-for-react'
 import utils from "@/utils/utils";
 import * as echarts from 'echarts';
-export default function index(){
+export default function index() {
     return (
         <div className='card h-100 shadow border-0 w-100 bg-white'>
             <div className='card-header pt-1 border-0 pb-0 bg-white'>
@@ -33,52 +33,52 @@ export default function index(){
         </div>
     )
 }
-    const optsChartWeekySales= {
-        barWidth:5,
-        tooltip: {
-            trigger: 'item',
-                backgroundColor: utils.getColor('gray-gray-100'),
-                borderColor: utils.getColor('gray-gray-100'),
-                textStyle: {
-                    color: utils.getColor('dark')
-                },
-                borderWidth: 1,
-                formatter: function formatter(params: any[]) {
-                   return utils.getFormatter([ params]);
-                },
-                transitionDuration: 0,
-                position: function position(pos: number[], params: any, dom: HTMLElement, rect: DOMRect, size: any) {
-                    return utils.getPosition(pos, params, dom, rect, size);
-                }
+const optsChartWeekySales = {
+    barWidth: 5,
+    tooltip: {
+        trigger: 'item',
+        backgroundColor: utils.getColor('gray-gray-100'),
+        borderColor: utils.getColor('gray-gray-100'),
+        textStyle: {
+            color: utils.getColor('dark')
         },
-        xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            show: false
+        borderWidth: 1,
+        formatter: function formatter(params: any[]) {
+            return utils.getFormatter([params]);
         },
-        yAxis: {
-            type: 'value',
-            show: false
-        },
-        grid:{
-            left:'30px',
-            right:'10px'
-        },
-        series: [
-            {
-                data: [120, 200, 150, 80, 70, 110, 130],
-                type: 'bar',
-                
-                itemStyle:{
-                    barBorderRadius:100,
-                    color:utils.getColor('primary')
-                },
-                showBackground: true,
-                backgroundStyle: {
-                    color: utils.getColor('gray-gray-400'),
-                    borderRadius: 10
-                },
+        transitionDuration: 0,
+        position: function position(pos: number[], params: any, dom: HTMLElement, rect: DOMRect, size: any) {
+            return utils.getPosition(pos, params, dom, rect, size);
+        }
+    },
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        show: false
+    },
+    yAxis: {
+        type: 'value',
+        show: false
+    },
+    grid: {
+        left: '30px',
+        right: '10px'
+    },
+    series: [
+        {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
 
-            }
-        ]
-    };
+            itemStyle: {
+                barBorderRadius: 100,
+                color: utils.getColor('primary')
+            },
+            showBackground: true,
+            backgroundStyle: {
+                color: utils.getColor('gray-gray-400'),
+                borderRadius: 10
+            },
+
+        }
+    ]
+};

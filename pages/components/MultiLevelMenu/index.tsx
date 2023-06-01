@@ -4,15 +4,14 @@ import React from "react";
 import Image from 'next/image';
 import { Category } from '@/type/type';
 function CategoryNode({ level, category, children }: { level: number, category: Partial<Category>, children: ReactNode }) {
-  //  console.log('height: ',height,'--level: ',level,' name: ',category.type)
     const [show, setShow] = useState(true)
     const handleClick = () => {
         setShow(!show)
     }
     return (
         <>
-                {
-                    category.subCat ? (
+            {
+                category.subCat ? (
                     <>
                         <div className='w-100' style={{ height: '30px', transition: 'height .3s ease-in-out' }} >
                             <form className="d-inline-flex py-0 gap-2 w-100 overflow-hidden" style={{ height: '100%' }} onClick={handleClick} role='button'>
@@ -29,19 +28,19 @@ function CategoryNode({ level, category, children }: { level: number, category: 
                                 </h6>
                             </form>
                         </div>
-                            <div className={`d-flex flex-column text-gray-700 overflow-hidden ${show ? ' d-none' : ''}`} style={{ height: 'auto', transition: 'all .3s ease-out' }}>
-                                {children}
-                            </div>
+                        <div className={`d-flex flex-column text-gray-700 overflow-hidden ${show ? ' d-none' : ''}`} style={{ height: 'auto', transition: 'all .3s ease-out' }}>
+                            {children}
+                        </div>
                     </>
-                    ) :
-                        (
+                ) :
+                    (
                         <div className="d-inline-flex py-0 gap-2 w-100  " style={{ height: '30px' }} >
                             <>
                                 {
                                     category.avata ? (
                                         <Image width={15} height={15} className='my-auto' src={'/images/' + category.avata} alt='abc' />
                                     ) :
-                                    <div className='' style={{width:'15px',height:'15px'}}></div>
+                                        <div className='' style={{ width: '15px', height: '15px' }}></div>
                                 }
                             </>
                             <div className='my-auto w-100 overflow-hidden'>
@@ -50,11 +49,11 @@ function CategoryNode({ level, category, children }: { level: number, category: 
                                 </a>
                             </div>
                         </div>
-                        )
-                }
+                    )
+            }
         </>)
 }
-export default function CategoryList({ level,prop  }: { level: number, prop: Category[] | undefined }) {
+export default function CategoryList({ level, prop }: { level: number, prop: Category[] | undefined }) {
     return (
         <>
             {
@@ -63,7 +62,7 @@ export default function CategoryList({ level,prop  }: { level: number, prop: Cat
                     return (
                         < CategoryNode key={uniqid()} level={parentLevel} category={cat}>
                             < >
-                                <CategoryList prop={cat.subCat}  level={cat.subCat?++parentLevel:parentLevel} />
+                                <CategoryList prop={cat.subCat} level={cat.subCat ? ++parentLevel : parentLevel} />
                             </>
                         </CategoryNode>
 
