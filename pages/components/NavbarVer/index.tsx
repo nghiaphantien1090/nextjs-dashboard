@@ -64,7 +64,7 @@ export default function NavbarVer() {
     }
     return (
         <>
-            <div className={'position-fixed top-0 pb-3 ' } style={{ zIndex: '501' }} >
+            <div className={'position-fixed top-0 pb-3' } style={{ zIndex: '501' ,width:0}} >
                 <div className={'mb-0 ' + styles.navbarToogle}>
                     <div className={'d-flex justify-content-between ' + styles.toogleIcon}>
                         <button className='ps-0 border-0' onClick={handleNavbarToggle}>

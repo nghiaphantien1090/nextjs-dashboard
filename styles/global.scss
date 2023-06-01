@@ -221,3 +221,6 @@ $utilities: map-merge($utilities, ("visibility": map-merge(map-get($utilities, "
 .overflow-y-scroll{
   overflow-y: scroll;
 }
+.shadow-bottom{
+  box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0,0,0,.2) !important
+}

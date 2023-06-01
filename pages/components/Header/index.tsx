@@ -19,7 +19,7 @@ export default function Header(){
 
     }, [])
     return(
-<div className="pt-1 pb-2 px-1 bg-body-color my-auto ms--1 me--1" style={{position:`${isFixNav?'sticky':'static'}`,zIndex:'500',top:'0'}}>
+<div className="pt-1 pb-2 px-1 bg-body-color my-auto ms--1 me--1 shadow-bottom " style={{position:`${isFixNav?'sticky':'static'}`,zIndex:'500',top:'0'}}>
         <div className="d-flex justify-content-end justify-content-xl-between w-100">
             <div className={'align-items-center   d-none d-xl-block '+styles.searchBar }>
                <div className={'align-middle ' +styles.lookupIcon}>
