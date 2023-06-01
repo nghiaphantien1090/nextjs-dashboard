@@ -22,7 +22,7 @@ export default function NavbarVer() {
         function handleResize() {
             const container = document?.querySelector('.container') as HTMLElement
             const containerWidth = container?.offsetWidth;
-            setWidth(containerWidth );
+            setWidth(containerWidth);
             const widthWindow = window.innerWidth;
             if (widthWindow >= 1200) {
                 dispatch(changeLargerXlSizeAction(true));
@@ -36,35 +36,35 @@ export default function NavbarVer() {
         return () => window.removeEventListener('resize', handleResize);
     }, [dispatch]);
     const style: CSSProperties = width <= 960 ? { width: width } : {};
-    
+
     const handleToggleSidebar = () => {
         dispatch(toggleSidebar())
     }
     const navbar = useAppSelector(state => state.navbar);
-    
+
     const handleNavbarToggle = () => {
         dispatch(toogleAction());
     };
-    let styleNav=[]
+    let styleNav = []
     if (navbar.largerXlSize) {
         if (navbar.isShowNavbar) {
-           styleNav=[styles.navbarVerExpand] 
+            styleNav = [styles.navbarVerExpand]
         }
         else {
-           styleNav=[styles.navbarVerCollapse] 
+            styleNav = [styles.navbarVerCollapse]
         }
     }
     else {
         if (navbar.isShowNavbar) {
-            styleNav=[styles.navbarHorCollapse]
+            styleNav = [styles.navbarHorCollapse]
         }
         else {
-            styleNav=[styles.navbarHorExpand]
+            styleNav = [styles.navbarHorExpand]
         }
     }
     return (
         <>
-            <div className={'position-fixed top-0 pb-3' } style={{ zIndex: '501' ,width:0}} >
+            <div className={'position-fixed top-0 pb-3'} style={{ zIndex: '501', width: 0 }} >
                 <div className={'mb-0 ' + styles.navbarToogle}>
                     <div className={'d-flex justify-content-between ' + styles.toogleIcon}>
                         <button className='ps-0 border-0' onClick={handleNavbarToggle}>
@@ -77,13 +77,13 @@ export default function NavbarVer() {
                             </div>
                         </div>
                     </div>
-                </div> 
-                
+                </div>
+
                 <div className={clsx('overflow-scroll pb-0 mx--1 px-1 bg-body scroll', ...styleNav)}
                     style={style} >
-                      <CategoryList level={0} prop={Categories}  /> 
+                    <CategoryList level={0} prop={Categories} />
                 </div>
-               
+
             </div>
         </>
     )

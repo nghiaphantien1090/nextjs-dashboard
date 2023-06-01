@@ -1,5 +1,5 @@
 import Image from "next/image"
-export default function index(){
+export default function index() {
     return (
         <div className='card w-100 h-100 shadow border-0'>
             <div className='card-header bg-white pt-1 border-0'>
@@ -16,7 +16,7 @@ export default function index(){
                 <div className='d-flex justify-content-between '>
                     <div className='d-flex '>
                         <div style={{ marginRight: 0 }}>
-                                <Image width={60} height={60} alt='weather' src={'/images/weather.png'} />
+                            <Image width={60} height={60} alt='weather' src={'/images/weather.png'} />
                         </div>
                         <div className='d-block ms-1' >
                             <h6 style={{ fontSize: '14px' }}>New York city</h6>
