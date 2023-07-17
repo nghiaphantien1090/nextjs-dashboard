@@ -32,54 +32,56 @@ export default function TotalOrder() {
 }
 const optsChartTotalOrder =
 {
-    "tooltip": { 
-                trigger: 'axis',
-                padding: [7, 10],
-                backgroundColor: utils.getColor('gray-gray-100'),
-                borderColor: utils.getColor('gray-gray-100'),
-                textStyle: {
-                    color: utils.getColor('dark')
-                },
-                borderWidth: 1,
-                formatter: function formatter(params: any[]) {
-                   return utils.getFormatter(params);
-                },
-                transitionDuration: 0,
-                position: function position(pos: number[], params: any, dom: HTMLElement, rect: DOMRect, size: any) {
-                    return utils.getPosition(pos, params, dom, rect, size);
-                }
-    
-     },
+    "tooltip": {
+        trigger: 'axis',
+        padding: [7, 10],
+        backgroundColor: utils.getColor('gray-gray-100'),
+        borderColor: utils.getColor('gray-gray-100'),
+        textStyle: {
+            color: utils.getColor('dark')
+        },
+        borderWidth: 1,
+        formatter: function formatter(params: any[]) {
+            return utils.getFormatter(params);
+        },
+        transitionDuration: 0,
+        position: function position(pos: number[], params: any, dom: HTMLElement, rect: DOMRect, size: any) {
+            return utils.getPosition(pos, params, dom, rect, size);
+        }
+
+    },
     "yAxis": {
         type: 'value', show: false
     },
     "xAxis": { "data": ["Week 4", "Week 5", "Week 6", "Week 7"], "show": false },
     "series": [{
         "type": "line",
-         "data": [20, 40, 100, 120],
+        "data": [20, 40, 100, 120],
         "smooth": true,
-        "lineStyle": { "width": 3,
-         color: utils.rgbaColor(utils.getColor('primary'),0.8)},
+        "lineStyle": {
+            "width": 3,
+            color: utils.rgbaColor(utils.getColor('primary'), 0.8)
+        },
         showSymbol: false,
         areaStyle: {
-                    color: {
-                        type: 'linear',
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        colorStops: [{
-                            offset: 0,
-                            color: utils.rgbaColor(utils.getColor('primary'), 0.2)
-                        }, {
-                            offset: 1,
-                            color: utils.rgbaColor(utils.getColor('primary'), 0)
-                        }]
-                    }
+            color: {
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 0,
+                y2: 1,
+                colorStops: [{
+                    offset: 0,
+                    color: utils.rgbaColor(utils.getColor('primary'), 0.2)
+                }, {
+                    offset: 1,
+                    color: utils.rgbaColor(utils.getColor('primary'), 0)
+                }]
+            }
         },
-        label:{
-      show:false
-    }
+        label: {
+            show: false
+        }
     }],
     "grid": { "bottom": "2%", "top": "5%", "right": "0", "left": "0px" }
 }

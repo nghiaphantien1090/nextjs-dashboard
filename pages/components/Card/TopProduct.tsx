@@ -3,7 +3,6 @@ import utils from "@/utils/utils";
 import * as echarts from 'echarts';
 export default function index() {
     return (
-
         <div className='card border-0 h-100 shadow'>
             <div className='card-header border-0 py-1 d-inline-flex justify-content-between'>
                 <div className='my-auto'>
@@ -17,7 +16,7 @@ export default function index() {
                 </div>
             </div>
             <div className='card-body border-0 py-0 top-product-chart'>
-                <ReactECharts option={optTopProducts} className='' style={{ width: '100%', height: '95%' ,minHeight:'370px'}} />
+                <ReactECharts option={optTopProducts} className='' style={{ width: '100%', height: '95%', minHeight: '370px' }} />
             </div>
 
         </div>
