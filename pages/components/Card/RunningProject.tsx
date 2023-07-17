@@ -1,36 +1,35 @@
 import Badge from "../Badge"
 
-export default function index(){
-    return(
-        
-                                <div className='card border-0 shadow h-100'>
-                                    <div className=' card-header border-0 d-flex gap-0 mt-0 align-items-center justify-content-between'>
-                                        <div>
-                                            <h6>Running Projects</h6>
-                                        </div>
-                                        <div>
-                                            <select className="form-select form-select-sm bg-light fs-16">
-                                                <option>Working Time</option>
-                                                <option>Estimated Time</option>
-                                                <option>Billable Time</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className='card-body border-0'>
-                                        <ProjectRunning />
-                                        <ProjectRunning />
-                                        <ProjectRunning />
-                                        <ProjectRunning />
-                                        <ProjectRunning />
-                                    </div>
-                                    <div className='card-footer border-0 d-flex justify-content-center align-items-center text-primary'>
-                                        Show All Projects
-                                    </div>
-                                </div>
-                            
+export default function index() {
+    return (
+        <div className='card border-0 shadow h-100'>
+            <div className=' card-header border-0 d-flex gap-0 mt-0 align-items-center justify-content-between'>
+                <div>
+                    <h6>Running Projects</h6>
+                </div>
+                <div>
+                    <select className="form-select form-select-sm bg-light fs-16">
+                        <option>Working Time</option>
+                        <option>Estimated Time</option>
+                        <option>Billable Time</option>
+                    </select>
+                </div>
+            </div>
+            <div className='card-body border-0'>
+                <ProjectRunning />
+                <ProjectRunning />
+                <ProjectRunning />
+                <ProjectRunning />
+                <ProjectRunning />
+            </div>
+            <div className='card-footer border-0 d-flex justify-content-center align-items-center text-primary'>
+                Show All Projects
+            </div>
+        </div>
+
     )
 }
-const ProjectRunning = ()=>{
+const ProjectRunning = () => {
     return (
         <div className="row g-0 align-items-center py-0 position-relative border-bottom border-0 border-gray-100">
             <div className="col-7 py-0 position-static">
